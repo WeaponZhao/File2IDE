@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>com.WeaponZhao.plugin.File2IDE</id>
+    <name>File2IDE</name>
+    <version>0.0.1</version>
+    <vendor email="weapon_zhao@163.com" url="https://github.com/WeaponZhao/File2IDE">WeaponZhao</vendor>
+
+    <description><![CDATA[
+    Use URL download code file to IDE project path</br>
+    使用URL下载代码文件到IDE项目的指定路径
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <action class="com.weapon.zhao.plugin.file2ide.action.MainMenuAction" id="file2ide" text="Download Code"
+                description="Download code file from URL" icon="/icons/download@2x.svg">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
