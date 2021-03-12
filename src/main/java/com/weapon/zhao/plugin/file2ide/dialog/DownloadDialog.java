@@ -9,6 +9,7 @@ import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.components.JBTextField;
+import com.intellij.util.ui.UI;
 import com.weapon.zhao.plugin.file2ide.util.UrlHttpUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,6 +32,7 @@ public class DownloadDialog extends DialogWrapper {
     private final Project currentProject;
     private JPanel gridLayout;
     private JBTextField url;
+    private JPanel urlComment;
     private JTextField folder;
     private TextFieldWithBrowseButton browseButton;
 
@@ -112,7 +114,7 @@ public class DownloadDialog extends DialogWrapper {
     private void createUIComponents() {
         // URL Input
         this.url = new JBTextField();
-        this.url.getEmptyText().setText("Support http/https/ftp protocol");
+        this.urlComment = UI.PanelFactory.panel(this.url).withComment("Support http/https/ftp protocol").createPanel();
         // Folder Select
         String basePath = this.currentProject.getBasePath();
         this.folder = new JTextField(basePath);
